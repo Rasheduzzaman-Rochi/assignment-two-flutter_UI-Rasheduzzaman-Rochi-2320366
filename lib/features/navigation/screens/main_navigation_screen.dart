@@ -131,6 +131,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
+      leadingWidth: 70,
+      centerTitle: false,
+      titleSpacing: 0,
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
         child: CircleAvatar(
@@ -143,10 +146,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         children: [
           Text(
             'Welcome back,',
-            style: TextStyle(color: Colors.grey, fontSize: 12),
+            style: TextStyle(color: Colors.black45, fontSize: 14, fontWeight: FontWeight.bold),
           ),
           Text(
-            'STUDENT NAME',
+            'Rasheduzzaman Rochi',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -156,9 +159,42 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       actions: [
-        IconButton(
-          icon: const Icon(Icons.notifications_none, color: Colors.black),
-          onPressed: () {},
+        Padding(
+          padding: const EdgeInsets.only(right: 16.0),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF1F4F8), // light off-white background
+                  shape: BoxShape.circle,
+                ),
+              ),
+              IconButton(
+                iconSize: 28,
+                icon: const Icon(
+                  Icons.notifications_none,
+                  color: Color(0xFF57636C), // dark grey icon
+                ),
+                onPressed: () {},
+              ),
+              Positioned(
+                top: 6,
+                right: 8,
+                child: Container(
+                  width: 10,
+                  height: 12,
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade200,  // red badge dot
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 1.5),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
