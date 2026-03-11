@@ -132,6 +132,20 @@ class HomeScreen extends StatelessWidget {
           '+\$3500.00',
           Colors.green,
         ),
+        _buildTransactionTile(
+          Icons.local_grocery_store,
+          'Grocery Store',
+          'Shopping • Yesterday',
+          '\$55.80',
+          Colors.red,
+        ),
+        _buildTransactionTile(
+          Icons.local_grocery_store,
+          'Amazon Purchase',
+          'Shopping • 2 days ago',
+          '\$120.45',
+          Colors.red,
+        ),
       ],
     );
   }
@@ -146,7 +160,7 @@ class HomeScreen extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.04),
-              blurRadius: 3.0,
+              blurRadius: 5.0,
               spreadRadius: 2.0,
               offset: const Offset(0, 4),
             ),
