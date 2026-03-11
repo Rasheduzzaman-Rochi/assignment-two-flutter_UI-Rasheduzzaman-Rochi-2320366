@@ -6,7 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 15.0),
       children: [
         Container(
           padding: const EdgeInsets.all(20),
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 6),
               RichText(
                 text: const TextSpan(
                   children: [
@@ -61,7 +61,13 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
+              const Divider(
+                color: Colors.white24,
+                thickness: 0.6,
+                height: 1,
+              ),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -78,7 +84,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 18),
+        const SizedBox(height: 19),
         Row(
           children: [
             _buildActionButton(Icons.import_export, 'Transfer'),
@@ -88,7 +94,7 @@ class HomeScreen extends StatelessWidget {
             _buildActionButton(Icons.link, 'Invest'),
           ],
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -150,8 +156,8 @@ class HomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 52,
-              height: 36,
+              width: 40,
+              height: 40,
               decoration: const BoxDecoration(
                 color: Color(0xFFEEF0FF),
                 shape: BoxShape.circle,
@@ -162,11 +168,11 @@ class HomeScreen extends StatelessWidget {
                 size: 28,
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
             Text(
               label,
               style: const TextStyle(
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
                 color: Color(0xFF333333),
               ),
