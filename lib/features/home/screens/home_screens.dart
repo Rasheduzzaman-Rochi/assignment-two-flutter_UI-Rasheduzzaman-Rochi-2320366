@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                       text: '\$8,945',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 36,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       text: '.32',
                       style: TextStyle(
                         color: Color.fromARGB(228, 255, 255, 255),
-                        fontSize: 20, // Smaller font size for decimals
+                        fontSize: 16, // Smaller font size for decimals
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -94,23 +94,29 @@ class HomeScreen extends StatelessWidget {
             _buildActionButton(Icons.link, 'Invest'),
           ],
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 12),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               'Recent Transactions',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             TextButton(
               onPressed: () {},
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
               child: const Text(
                 'View All',
-                style: TextStyle(color: Color(0xFF4B39EF)),
+                style: TextStyle(fontSize: 13, color: Color(0xFF4B39EF)),
               ),
             ),
           ],
         ),
+        const SizedBox(height: 12),
         _buildTransactionTile(
           Icons.movie,
           'Netflix Subscription',
@@ -197,29 +203,51 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTransactionTile(
-    IconData icon,
-    String title,
-    String subtitle,
-    String amount,
-    Color amountColor,
-  ) {
-    return Card(
-      elevation: 0,
-      margin: const EdgeInsets.only(bottom: 8),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+  Widget _buildTransactionTile(IconData icon, String title, String subtitle, String amount, Color amountColor) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04), 
+            spreadRadius: 2.0,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
       child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: Colors.grey.shade200,
-          child: Icon(icon, color: Colors.black54),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        leading: Container(
+          width: 48,
+          height: 48,
+          decoration: const BoxDecoration(
+            color: Color(0xFFF1F4F8), 
+            shape: BoxShape.circle,
+          ),
+          child: Icon(icon, color: const Color(0xFF57636C), size: 24),
         ),
-        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text(subtitle, style: const TextStyle(fontSize: 12)),
+        title: Text(
+          title, 
+          style: const TextStyle(
+            fontWeight: FontWeight.bold, 
+            fontSize: 15,
+            color: Color(0xFF333333),
+          ),
+        ),
+        subtitle: Text(
+          subtitle, 
+          style: const TextStyle(
+            fontSize: 13, 
+            color: Colors.grey,
+          ),
+        ),
         trailing: Text(
-          amount,
+          amount, 
           style: TextStyle(
-            color: amountColor,
-            fontWeight: FontWeight.bold,
+            color: amountColor, 
+            fontWeight: FontWeight.bold, 
             fontSize: 16,
           ),
         ),
