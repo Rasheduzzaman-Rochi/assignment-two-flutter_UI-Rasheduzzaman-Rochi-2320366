@@ -30,11 +30,12 @@ class HomeScreen extends StatelessWidget {
                 children: const [
                   Text(
                     'Total Balance',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 13),
                   ),
                   Icon(
                     Icons.account_balance_wallet_outlined,
                     color: Colors.white,
+                    size: 20,
                   ),
                 ],
               ),
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                       text: '\$8,945',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 32,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,16 +55,16 @@ class HomeScreen extends StatelessWidget {
                       text: '.32',
                       style: TextStyle(
                         color: Color.fromARGB(228, 255, 255, 255),
-                        fontSize: 16, // Smaller font size for decimals
+                        fontSize: 14, // Smaller font size for decimals
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 13),
               const Divider(color: Colors.white24, thickness: 0.6, height: 1),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -155,7 +156,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildActionButton(IconData icon, String label) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        padding: const EdgeInsets.symmetric(vertical: 12.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -223,8 +224,8 @@ class HomeScreen extends StatelessWidget {
           vertical: 4.0,
         ),
         leading: Container(
-          width: 38,
-          height: 38,
+          width: 32,
+          height: 32,
           decoration: const BoxDecoration(
             color: Color(0xFFF1F4F8),
             shape: BoxShape.circle,
