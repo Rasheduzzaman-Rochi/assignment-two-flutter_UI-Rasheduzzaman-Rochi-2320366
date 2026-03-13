@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/action_button.dart';
+import '../widgets/transaction_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 15.0),
       children: [
         Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: const Color(0xFF4B39EF),
             borderRadius: BorderRadius.circular(16),
@@ -47,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                       text: '\$8,945',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 28,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -70,11 +72,11 @@ class HomeScreen extends StatelessWidget {
                 children: const [
                   Text(
                     'Savings: \$5,500',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(fontSize: 13, color: Colors.white),
                   ),
                   Text(
                     'Last 30 days: +\$300 →',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(fontSize: 13, color: Colors.white),
                   ),
                 ],
               ),
@@ -84,11 +86,11 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(height: 19),
         Row(
           children: [
-            _buildActionButton(Icons.import_export, 'Transfer'),
+            buildActionButton(Icons.import_export, 'Transfer'),
             const SizedBox(width: 12),
-            _buildActionButton(Icons.info_outline, 'Pay Bills'),
+            buildActionButton(Icons.info_outline, 'Pay Bills'),
             const SizedBox(width: 12),
-            _buildActionButton(Icons.link, 'Invest'),
+            buildActionButton(Icons.link, 'Invest'),
           ],
         ),
         const SizedBox(height: 12),
@@ -114,35 +116,35 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        _buildTransactionTile(
+        buildTransactionTile(
           Icons.movie,
           'Netflix Subscription',
           'Entertainment • Today',
           '\$19.99',
           Colors.red,
         ),
-        _buildTransactionTile(
+        buildTransactionTile(
           Icons.coffee,
           'Coffee Shop',
           'Food & Drink • Today',
           '\$4.50',
           Colors.red,
         ),
-        _buildTransactionTile(
+        buildTransactionTile(
           Icons.work,
           'Salary Deposit',
           'Income • Yesterday',
           '+\$3500.00',
           Colors.green,
         ),
-        _buildTransactionTile(
+        buildTransactionTile(
           Icons.local_grocery_store,
           'Grocery Store',
           'Shopping • Yesterday',
           '\$55.80',
           Colors.red,
         ),
-        _buildTransactionTile(
+        buildTransactionTile(
           Icons.local_grocery_store,
           'Amazon Purchase',
           'Shopping • 2 days ago',
@@ -150,109 +152,6 @@ class HomeScreen extends StatelessWidget {
           Colors.red,
         ),
       ],
-    );
-  }
-
-  Widget _buildActionButton(IconData icon, String label) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.04),
-              blurRadius: 5.0,
-              spreadRadius: 2.0,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: const BoxDecoration(
-                color: Color(0xFFEEF0FF),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, color: const Color(0xFF4B39EF), size: 28),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF333333),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTransactionTile(
-    IconData icon,
-    String title,
-    String subtitle,
-    String amount,
-    Color amountColor,
-  ) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            spreadRadius: 2.0,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: ListTile(
-        dense: true,
-        visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 4.0,
-        ),
-        leading: Container(
-          width: 32,
-          height: 32,
-          decoration: const BoxDecoration(
-            color: Color(0xFFF1F4F8),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(icon, color: const Color(0xFF57636C), size: 20),
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-            color: Color(0xFF333333),
-          ),
-        ),
-        subtitle: Text(
-          subtitle,
-          style: const TextStyle(fontSize: 12, color: Colors.grey),
-        ),
-        trailing: Text(
-          amount,
-          style: TextStyle(
-            color: amountColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-          ),
-        ),
-      ),
     );
   }
 }
