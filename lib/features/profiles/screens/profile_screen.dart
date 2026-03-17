@@ -26,32 +26,41 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        _buildProfileInfoCard('Name', 'STUDENT NAME (YOUR NAME HERE)'),
-        _buildProfileInfoCard('Student ID', 'S12345 (YOUR ID HERE)'),
-        _buildProfileInfoCard('Email', 'student.name@iub.edu'),
+        _buildProfileInfoCard('Name', 'Rasheduzzaman Rochi'),
+        _buildProfileInfoCard('Student ID', '2320366'),
+        _buildProfileInfoCard('Email', '2320366@iub.edu'),
 
-        Card(
-          elevation: 0,
-          margin: const EdgeInsets.only(bottom: 12),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+        Container(
+          margin: const EdgeInsets.only(bottom: 12.0), 
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.04),
+                blurRadius: 15.0,
+                spreadRadius: 2.0,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Bio / Story',
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Bio / Story',
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+              SizedBox(height: 4),
+              Text(
+                "I'm currently focusing on my final year, balancing studies with building side projects. I believe financial health is key to academic success.",
+                style: TextStyle(
+                  color: Color(0xFF333333), 
+                  fontSize: 14,
                 ),
-                SizedBox(height: 8),
-                Text(
-                  "I'm currently focusing on my final year, balancing studies with building side projects. I believe financial health is key to academic success.",
-                  style: TextStyle(fontStyle: FontStyle.italic),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],
@@ -59,26 +68,38 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildProfileInfoCard(String label, String value) {
-    return Card(
-      elevation: 0,
-      margin: const EdgeInsets.only(bottom: 12),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: const TextStyle(color: Colors.grey, fontSize: 12),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 15.0,
+            spreadRadius: 2.0,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(color: Colors.grey, fontSize: 12),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            value,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+              color: Color(0xFF333333),
             ),
-            const SizedBox(height: 4),
-            Text(
-              value,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
