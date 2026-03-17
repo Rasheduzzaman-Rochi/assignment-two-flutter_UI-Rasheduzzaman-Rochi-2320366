@@ -31,14 +31,14 @@ class ProfileScreen extends StatelessWidget {
         _buildProfileInfoCard('Email', '2320366@iub.edu'),
 
         Container(
-          margin: const EdgeInsets.only(bottom: 12.0), 
+          margin: const EdgeInsets.only(bottom: 12.0),
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.04),
+                color: Colors.black.withOpacity(0.10),
                 blurRadius: 15.0,
                 spreadRadius: 2.0,
                 offset: const Offset(0, 4),
@@ -50,14 +50,19 @@ class ProfileScreen extends StatelessWidget {
             children: const [
               Text(
                 'Bio / Story',
-                style: TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-              SizedBox(height: 4),
-              Text(
-                "I'm currently focusing on my final year, balancing studies with building side projects. I believe financial health is key to academic success.",
                 style: TextStyle(
-                  color: Color(0xFF333333), 
+                  color: Colors.black,
                   fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 6),
+              Text(
+                "Hi, I'm Rasheduzzaman Rochi, a CSE student and passionate developer. I love building mobile apps using Flutter and solving algorithmic problems through competitive programming.",
+                style: TextStyle(
+                  color: Color(0xFF333333),
+                  fontSize: 14,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
             ],
@@ -76,7 +81,7 @@ class ProfileScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withOpacity(0.10),
             blurRadius: 15.0,
             spreadRadius: 2.0,
             offset: const Offset(0, 4),
@@ -88,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(color: Colors.grey, fontSize: 12),
+            style: const TextStyle(color: Colors.black54, fontSize: 12),
           ),
           const SizedBox(height: 4),
           Text(
