@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildActionButton(IconData icon, String label) {
+Widget cardActionButton(IconData icon, String label) {
   return Expanded(
     child: Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0),

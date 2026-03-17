@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/action_button.dart';
+import '../widgets/home_action_button.dart';
 import '../widgets/transaction_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -86,11 +86,11 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(height: 19),
         Row(
           children: [
-            buildActionButton(Icons.import_export, 'Transfer'),
+            homeActionButton(Icons.import_export, 'Transfer'),
             const SizedBox(width: 12),
-            buildActionButton(Icons.info_outline, 'Pay Bills'),
+            homeActionButton(Icons.info_outline, 'Pay Bills'),
             const SizedBox(width: 12),
-            buildActionButton(Icons.link, 'Invest'),
+            homeActionButton(Icons.link, 'Invest'),
           ],
         ),
         const SizedBox(height: 12),

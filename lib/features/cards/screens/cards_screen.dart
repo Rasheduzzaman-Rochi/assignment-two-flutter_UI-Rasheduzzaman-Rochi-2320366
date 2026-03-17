@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../home/widgets/transaction_tile.dart';
+import '../widgets/card_action_button.dart';
 
 class CardsScreen extends StatelessWidget {
   const CardsScreen({super.key});
@@ -82,6 +84,34 @@ class CardsScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        const SizedBox(height: 19),
+        Row(
+          children: [
+            cardActionButton(Icons.import_export, 'Transfer'),
+            const SizedBox(width: 12),
+            cardActionButton(Icons.info_outline, 'Pay Bills'),
+            const SizedBox(width: 12),
+            cardActionButton(Icons.link, 'Invest'),
+          ],
+        ),
+        const SizedBox(height: 12),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Linked Accounts',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        buildTransactionTile(
+          Icons.movie,
+          'Netflix Subscription',
+          'Entertainment • Today',
+          '\$19.99',
+          Colors.red,
         ),
       ],
     );
