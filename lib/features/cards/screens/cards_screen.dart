@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../home/widgets/transaction_tile.dart';
+import 'package:student_wallet/features/cards/widgets/linked_account_box.dart';
 import '../widgets/card_action_button.dart';
 
 class CardsScreen extends StatelessWidget {
@@ -62,7 +62,7 @@ class CardsScreen extends StatelessWidget {
                         style: TextStyle(color: Colors.white54, fontSize: 10),
                       ),
                       Text(
-                        'STUDENT NAME',
+                        'Rasheduzzaman Rochi',
                         style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
                     ],
@@ -88,11 +88,11 @@ class CardsScreen extends StatelessWidget {
         const SizedBox(height: 19),
         Row(
           children: [
-            cardActionButton(Icons.import_export, 'Transfer'),
+            cardActionButton(Icons.cancel_outlined, 'Block'),
             const SizedBox(width: 12),
-            cardActionButton(Icons.info_outline, 'Pay Bills'),
+            cardActionButton(Icons.credit_card, 'Details'),
             const SizedBox(width: 12),
-            cardActionButton(Icons.link, 'Invest'),
+            cardActionButton(Icons.info_outline, 'Limit'),
           ],
         ),
         const SizedBox(height: 12),
@@ -106,13 +106,7 @@ class CardsScreen extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        buildTransactionTile(
-          Icons.movie,
-          'Netflix Subscription',
-          'Entertainment • Today',
-          '\$19.99',
-          Colors.red,
-        ),
+        linkedAccountBox('S', 'Shared Savings', '\$5,500.00'),
       ],
     );
   }

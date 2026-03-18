@@ -20,8 +20,8 @@ Widget cardActionButton(IconData icon, String label) {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: 34,
+            height: 34,
             decoration: const BoxDecoration(
               color: Color(0xFFEEF0FF),
               shape: BoxShape.circle,
