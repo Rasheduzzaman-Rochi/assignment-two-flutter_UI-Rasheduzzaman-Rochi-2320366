@@ -168,7 +168,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF1F4F8), // light off-white background
+                  color: const Color(0xFFF1F4F8), 
                   shape: BoxShape.circle,
                 ),
               ),
@@ -176,7 +176,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 iconSize: 28,
                 icon: const Icon(
                   Icons.notifications_none,
-                  color: Color(0xFF57636C), // dark grey icon
+                  color: Color(0xFF57636C),
                 ),
                 onPressed: () {},
               ),
