@@ -135,7 +135,7 @@ class HomeScreen extends StatelessWidget {
           'Salary Deposit',
           'Income • Yesterday',
           '+\$3500.00',
-          Colors.green,
+          const Color.fromARGB(255, 12, 165, 17),
         ),
         buildTransactionTile(
           Icons.local_grocery_store,
