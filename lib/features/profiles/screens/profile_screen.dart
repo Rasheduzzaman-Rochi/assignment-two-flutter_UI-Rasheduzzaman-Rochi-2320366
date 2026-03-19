@@ -16,13 +16,26 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        const Center(
-          child: CircleAvatar(
-            radius: 40,
-            backgroundColor: Color(0xFF4B39EF),
-            child: Text(
-              'SN',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+        Center(
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: const Color(0xFFCCD5FF), width: 6.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  blurRadius: 15.0,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: const CircleAvatar(
+              radius: 40,
+              backgroundColor: Color(0xFF4B39EF),
+              child: Text(
+                'SN',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
             ),
           ),
         ),
