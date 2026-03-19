@@ -13,10 +13,17 @@ class ReportsScreen extends StatelessWidget {
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 16),
-        Card(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.09),
+                blurRadius: 15.0,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -54,11 +61,19 @@ class ReportsScreen extends StatelessWidget {
             ),
           ),
         ),
+
         const SizedBox(height: 16),
-        Card(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.09),
+                blurRadius: 15.0,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -80,7 +95,7 @@ class ReportsScreen extends StatelessWidget {
                   'Shopping',
                   '\$320.00 (25%)',
                   0.25,
-                  Colors.blue,
+                  const Color.fromARGB(255, 62, 68, 236),
                 ),
                 buildProgressRow(
                   'Housing',
